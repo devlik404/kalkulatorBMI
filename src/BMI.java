@@ -94,6 +94,12 @@ public class BMI extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel6.setText("Berat (kg) :");
 
+        Txt4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Txt4ActionPerformed(evt);
+            }
+        });
+
         buttonGroup1.add(jRadioButton1);
         jRadioButton1.setText("Pria");
 
@@ -184,7 +190,7 @@ public class BMI extends javax.swing.JFrame {
                     .addComponent(Txt3, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
                     .addComponent(Txt4)
                     .addComponent(Btn3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
             .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
@@ -211,10 +217,11 @@ public class BMI extends javax.swing.JFrame {
                                     .addComponent(jLabel6)
                                     .addComponent(Txt4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(17, 17, 17)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(Txt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel4)
+                                .addComponent(Txt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(Txt3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(40, 40, 40)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -229,8 +236,8 @@ public class BMI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -251,6 +258,7 @@ public class BMI extends javax.swing.JFrame {
         Txt1.setText("");
         Txt2.setText("");
         Txt3.setText("");
+         Txt4.setText("");
         Txt2.setOpaque(true);
         Txt2.setBackground(null);
         jLabel7.setText("");
@@ -259,35 +267,204 @@ public class BMI extends javax.swing.JFrame {
     private void Btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn1ActionPerformed
  double berat = Double.parseDouble(Txt4.getText()); 
   double tinggi = Double.parseDouble(Txt3.getText());
+  double usia = Double.parseDouble(Txt1.getText());
+    
    
    double bmi = berat / (tinggi * tinggi);
+ 
    
    String cal = String.format("%.2f",bmi);
         Txt2.setText(cal);
         
-        if (bmi <= 18.5) {
+  if (usia >= 11 && usia <= 17) {
+    if (usia == 11) {
+        if (bmi < 13.9) {
+            // Kurang ideal untuk usia 11
+               Txt2.setOpaque(true);
+              Txt2.setBackground(Color.blue);
+            jLabel7.setForeground(Color.blue);
+            jLabel7.setText("Tidak Ideal");
+            // Lakukan tindakan sesuai kebutuhan
+        } else if (bmi >= 13.9 && bmi <= 19.9) {
+            // Ideal untuk usia 11
+            Txt2.setOpaque(true);
+            Txt2.setBackground(Color.green);
+            jLabel7.setForeground(Color.green);
+            jLabel7.setText("Ideal");
+        } else if (bmi > 19.9) {
+            // Obesitas untuk usia 11
+            Txt2.setOpaque(true);
+            Txt2.setBackground(Color.red);
+            jLabel7.setForeground(Color.red);
+            jLabel7.setText("obesitas");
+        }
+    } else if (usia >= 12 && usia <= 17) {
+        if (usia == 12) {
+            if (bmi < 14.4) {
+                // Kurang ideal untuk usia 12
+                Txt2.setOpaque(true);
+                Txt2.setBackground(Color.blue);
+                jLabel7.setForeground(Color.blue);
+                jLabel7.setText("Tidak Ideal");
+            } else if (bmi >= 14.4 && bmi <= 20.8) {
+                // Ideal untuk usia 12
+               Txt2.setOpaque(true);
+                Txt2.setBackground(Color.green);
+                jLabel7.setForeground(Color.green);
+                jLabel7.setText("Ideal");
+            } else if (bmi > 20.8) {
+                // Obesitas untuk usia 12
+                Txt2.setOpaque(true);
+                Txt2.setBackground(Color.red);
+                jLabel7.setForeground(Color.red);
+                jLabel7.setText("obesitas");
+            }
+        } else if (usia >= 13 && usia <= 17) {
+            if (usia == 13) {
+                if (bmi < 14.9) {
+                   // Kurang ideal untuk usia 14
+                    Txt2.setOpaque(true);
+                    Txt2.setBackground(Color.blue);
+                    jLabel7.setForeground(Color.blue);
+                    jLabel7.setText("Tidak Ideal");
+                } else if (bmi >= 14.9 && bmi <= 22.7) {
+                    // Ideal untuk usia 13
+                    Txt2.setOpaque(true);
+                    Txt2.setBackground(Color.green);
+                    jLabel7.setForeground(Color.green);
+                    jLabel7.setText("Ideal");
+                } else if (bmi > 22.7) {
+                // Obesitas untuk usia 13
+                Txt2.setOpaque(true);
+                Txt2.setBackground(Color.red);
+                jLabel7.setForeground(Color.red);
+                jLabel7.setText("obesitas");
+                }
+            }else if (usia >= 14 && usia <= 17) {
+            if (usia == 14) {
+                if (bmi < 15.4) {
+                    // Kurang ideal untuk usia 14
+                       Txt2.setOpaque(true);
+              Txt2.setBackground(Color.blue);
+            jLabel7.setForeground(Color.blue);
+            jLabel7.setText("Tidak Ideal");
+                    // Lakukan tindakan sesuai kebutuhan
+                } else if (bmi >= 15.4 && bmi <= 22.7) {
+                    // Ideal untuk usia 14
+                    Txt2.setOpaque(true);
+                    Txt2.setBackground(Color.green);
+                    jLabel7.setForeground(Color.green);
+                    jLabel7.setText("Ideal");
+                } else if (bmi > 22.7) {
+                    // Obesitas untuk usia 14
+                    Txt2.setOpaque(true);
+                    Txt2.setBackground(Color.red);
+                    jLabel7.setForeground(Color.red);
+                    jLabel7.setText("obesitas");
+                }
+            }else if (usia >= 15 && usia <= 17) {
+            if (usia == 15) {
+                if (bmi < 15.9) {
+                    // Kurang ideal untuk usia 15
+            Txt2.setOpaque(true);
+            Txt2.setBackground(Color.blue);
+            jLabel7.setForeground(Color.blue);
+            jLabel7.setText("Tidak Ideal");
+                } else if (bmi >= 15.9 && bmi <= 23.5) {
+                    // Ideal untuk usia 15
+            Txt2.setOpaque(true);
+            Txt2.setBackground(Color.green);
+            jLabel7.setForeground(Color.green);
+            jLabel7.setText("Ideal");
+                } else if (bmi > 23.5) {
+                    // Obesitas untuk usia 15
+            Txt2.setOpaque(true);
+            Txt2.setBackground(Color.red);
+            jLabel7.setForeground(Color.red);
+            jLabel7.setText("obesitas");
+            }
+            }else if (usia >= 16 && usia <= 17) {
+            if (usia == 16) {
+                if (bmi < 16.2) {
+                    // Kurang ideal untuk usia 16
+                       Txt2.setOpaque(true);
+              Txt2.setBackground(Color.blue);
+            jLabel7.setForeground(Color.blue);
+            jLabel7.setText("Tidak Ideal");
+                } else if (bmi >= 16.2 && bmi <= 24.1) {
+                    // Ideal untuk usia 16
+                      Txt2.setOpaque(true);
+            Txt2.setBackground(Color.green);
+            jLabel7.setForeground(Color.green);
+            jLabel7.setText("Ideal");
+                } else if (bmi > 24.1) {
+                    // Obesitas untuk usia 16
+                       Txt2.setOpaque(true);
+            Txt2.setBackground(Color.red);
+            jLabel7.setForeground(Color.red);
+            jLabel7.setText("obesitas");
+                }
+            }else if (usia == 17) {
+                if (bmi < 16.4) {
+                    // Kurang ideal untuk usia 17
+            Txt2.setOpaque(true);
+            Txt2.setBackground(Color.blue);
+            jLabel7.setForeground(Color.blue);
+            jLabel7.setText("Tidak Ideal");
+                } else if (bmi >= 16.4 && bmi <= 26.5) {
+                    // Ideal untuk usia 17
+                      Txt2.setOpaque(true);
+            Txt2.setBackground(Color.green);
+            jLabel7.setForeground(Color.green);
+            jLabel7.setText("Ideal");
+                } else if (bmi > 26.5) {
+                    // Obesitas untuk usia 17
+            Txt2.setOpaque(true);
+            Txt2.setBackground(Color.red);
+            jLabel7.setForeground(Color.red);
+            jLabel7.setText("obesitas");
+            
+                }
+            
+            
+                        }
+                    }
+                }
+            }
+        }
+    }
+} else {
+    // Usia diluar rentang 11-17
+    if (bmi <= 18.5) {
             Txt2.setOpaque(true);
               Txt2.setBackground(Color.blue);
             jLabel7.setForeground(Color.blue);
-            jLabel7.setText("kurang berat");
+            jLabel7.setText("Tidak Ideal");
         } else if (bmi <= 25) {
             Txt2.setOpaque(true);
-            Txt2.setBackground(Color.blue);
-            jLabel7.setForeground(Color.blue);
-            jLabel7.setText("Normal");
+            Txt2.setBackground(Color.green);
+            jLabel7.setForeground(Color.green);
+            jLabel7.setText("Ideal");
         } else if (bmi <= 30) {
             Txt2.setOpaque(true);
-            Txt2.setBackground(Color.blue);
-            jLabel7.setForeground(Color.blue);
+            Txt2.setBackground(Color.orange);
+            jLabel7.setForeground(Color.orange);
             jLabel7.setText("Gemuk");
         }else{
              Txt2.setOpaque(true);
-            Txt2.setBackground(Color.blue);
-            jLabel7.setForeground(Color.blue);
+            Txt2.setBackground(Color.red);
+            jLabel7.setForeground(Color.red);
             jLabel7.setText("obesitas");
         }
+    // Lakukan tindakan sesuai kebutuhan
+}
+      
             
     }//GEN-LAST:event_Btn1ActionPerformed
+
+    private void Txt4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Txt4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Txt4ActionPerformed
 
     /**
      * @param args the command line arguments
