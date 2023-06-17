@@ -271,17 +271,19 @@ public class BMI extends javax.swing.JFrame {
     
    
    double bmi = berat / (tinggi * tinggi);
- 
+    
    
    String cal = String.format("%.2f",bmi);
         Txt2.setText(cal);
         
+  // IMT = Berat Badan Lahir (gr) + (Usia x 600 gram)
+  
   if (usia >= 11 && usia <= 17) {
     if (usia == 11) {
         if (bmi < 13.9) {
             // Kurang ideal untuk usia 11
-               Txt2.setOpaque(true);
-              Txt2.setBackground(Color.blue);
+            Txt2.setOpaque(true);
+            Txt2.setBackground(Color.blue);
             jLabel7.setForeground(Color.blue);
             jLabel7.setText("Tidak Ideal");
             // Lakukan tindakan sesuai kebutuhan
@@ -423,7 +425,7 @@ public class BMI extends javax.swing.JFrame {
             Txt2.setBackground(Color.red);
             jLabel7.setForeground(Color.red);
             jLabel7.setText("obesitas");
-            
+            //
                 }
             
             
