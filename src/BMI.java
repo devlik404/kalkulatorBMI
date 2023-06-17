@@ -268,198 +268,404 @@ public class BMI extends javax.swing.JFrame {
  double berat = Double.parseDouble(Txt4.getText()); 
   double tinggi = Double.parseDouble(Txt3.getText());
   double usia = Double.parseDouble(Txt1.getText());
+
+  
+
+
+  
     
    
    double bmi = berat / (tinggi * tinggi);
+    double bmip = (berat / (tinggi * tinggi)) + 0.3;
+    
     
    
-   String cal = String.format("%.2f",bmi);
-        Txt2.setText(cal);
+   
+        
         
   // IMT = Berat Badan Lahir (gr) + (Usia x 600 gram)
-  
-  if (usia >= 11 && usia <= 17) {
-    if (usia == 11) {
-        if (bmi < 13.9) {
-            // Kurang ideal untuk usia 11
-            Txt2.setOpaque(true);
-            Txt2.setBackground(Color.blue);
-            jLabel7.setForeground(Color.blue);
-            jLabel7.setText("Tidak Ideal");
-            // Lakukan tindakan sesuai kebutuhan
-        } else if (bmi >= 13.9 && bmi <= 19.9) {
-            // Ideal untuk usia 11
-            Txt2.setOpaque(true);
-            Txt2.setBackground(Color.green);
-            jLabel7.setForeground(Color.green);
-            jLabel7.setText("Ideal");
-        } else if (bmi > 19.9) {
-            // Obesitas untuk usia 11
-            Txt2.setOpaque(true);
-            Txt2.setBackground(Color.red);
-            jLabel7.setForeground(Color.red);
-            jLabel7.setText("obesitas");
-        }
-    } else if (usia >= 12 && usia <= 17) {
-        if (usia == 12) {
-            if (bmi < 14.4) {
-                // Kurang ideal untuk usia 12
-                Txt2.setOpaque(true);
-                Txt2.setBackground(Color.blue);
-                jLabel7.setForeground(Color.blue);
-                jLabel7.setText("Tidak Ideal");
-            } else if (bmi >= 14.4 && bmi <= 20.8) {
-                // Ideal untuk usia 12
-               Txt2.setOpaque(true);
-                Txt2.setBackground(Color.green);
-                jLabel7.setForeground(Color.green);
-                jLabel7.setText("Ideal");
-            } else if (bmi > 20.8) {
-                // Obesitas untuk usia 12
-                Txt2.setOpaque(true);
-                Txt2.setBackground(Color.red);
-                jLabel7.setForeground(Color.red);
-                jLabel7.setText("obesitas");
-            }
-        } else if (usia >= 13 && usia <= 17) {
-            if (usia == 13) {
-                if (bmi < 14.9) {
-                   // Kurang ideal untuk usia 14
+    if (jRadioButton1.isSelected()) {
+        String calp = String.format("%.2f",bmip);
+        Txt2.setText(calp);
+        
+        if (usia >= 11 && usia <= 17) {
+            if (usia == 11) {
+                if (bmip < 13.9) {
+                    // Kurang ideal untuk usia 11
                     Txt2.setOpaque(true);
                     Txt2.setBackground(Color.blue);
                     jLabel7.setForeground(Color.blue);
                     jLabel7.setText("Tidak Ideal");
-                } else if (bmi >= 14.9 && bmi <= 22.7) {
-                    // Ideal untuk usia 13
-                    Txt2.setOpaque(true);
-                    Txt2.setBackground(Color.green);
-                    jLabel7.setForeground(Color.green);
-                    jLabel7.setText("Ideal");
-                } else if (bmi > 22.7) {
-                // Obesitas untuk usia 13
-                Txt2.setOpaque(true);
-                Txt2.setBackground(Color.red);
-                jLabel7.setForeground(Color.red);
-                jLabel7.setText("obesitas");
-                }
-            }else if (usia >= 14 && usia <= 17) {
-            if (usia == 14) {
-                if (bmi < 15.4) {
-                    // Kurang ideal untuk usia 14
-                       Txt2.setOpaque(true);
-              Txt2.setBackground(Color.blue);
-            jLabel7.setForeground(Color.blue);
-            jLabel7.setText("Tidak Ideal");
                     // Lakukan tindakan sesuai kebutuhan
-                } else if (bmi >= 15.4 && bmi <= 22.7) {
-                    // Ideal untuk usia 14
+                } else if (bmip >= 13.9 && bmip <= 19.9) {
+                    // Ideal untuk usia 11
                     Txt2.setOpaque(true);
                     Txt2.setBackground(Color.green);
                     jLabel7.setForeground(Color.green);
                     jLabel7.setText("Ideal");
-                } else if (bmi > 22.7) {
-                    // Obesitas untuk usia 14
+                } else if (bmip > 19.9) {
+                    // Obesitas untuk usia 11
                     Txt2.setOpaque(true);
                     Txt2.setBackground(Color.red);
                     jLabel7.setForeground(Color.red);
                     jLabel7.setText("obesitas");
                 }
-            }else if (usia >= 15 && usia <= 17) {
-            if (usia == 15) {
-                if (bmi < 15.9) {
-                    // Kurang ideal untuk usia 15
-            Txt2.setOpaque(true);
-            Txt2.setBackground(Color.blue);
-            jLabel7.setForeground(Color.blue);
-            jLabel7.setText("Tidak Ideal");
-                } else if (bmi >= 15.9 && bmi <= 23.5) {
-                    // Ideal untuk usia 15
-            Txt2.setOpaque(true);
-            Txt2.setBackground(Color.green);
-            jLabel7.setForeground(Color.green);
-            jLabel7.setText("Ideal");
-                } else if (bmi > 23.5) {
-                    // Obesitas untuk usia 15
-            Txt2.setOpaque(true);
-            Txt2.setBackground(Color.red);
-            jLabel7.setForeground(Color.red);
-            jLabel7.setText("obesitas");
-            }
-            }else if (usia >= 16 && usia <= 17) {
-            if (usia == 16) {
-                if (bmi < 16.2) {
-                    // Kurang ideal untuk usia 16
-                       Txt2.setOpaque(true);
-              Txt2.setBackground(Color.blue);
-            jLabel7.setForeground(Color.blue);
-            jLabel7.setText("Tidak Ideal");
-                } else if (bmi >= 16.2 && bmi <= 24.1) {
-                    // Ideal untuk usia 16
-                      Txt2.setOpaque(true);
-            Txt2.setBackground(Color.green);
-            jLabel7.setForeground(Color.green);
-            jLabel7.setText("Ideal");
-                } else if (bmi > 24.1) {
-                    // Obesitas untuk usia 16
-                       Txt2.setOpaque(true);
-            Txt2.setBackground(Color.red);
-            jLabel7.setForeground(Color.red);
-            jLabel7.setText("obesitas");
-                }
-            }else if (usia == 17) {
-                if (bmi < 16.4) {
-                    // Kurang ideal untuk usia 17
-            Txt2.setOpaque(true);
-            Txt2.setBackground(Color.blue);
-            jLabel7.setForeground(Color.blue);
-            jLabel7.setText("Tidak Ideal");
-                } else if (bmi >= 16.4 && bmi <= 26.5) {
-                    // Ideal untuk usia 17
-                      Txt2.setOpaque(true);
-            Txt2.setBackground(Color.green);
-            jLabel7.setForeground(Color.green);
-            jLabel7.setText("Ideal");
-                } else if (bmi > 26.5) {
-                    // Obesitas untuk usia 17
-            Txt2.setOpaque(true);
-            Txt2.setBackground(Color.red);
-            jLabel7.setForeground(Color.red);
-            jLabel7.setText("obesitas");
-            //
-                }
-            
-            
+            } 
+            else if (usia >= 12 && usia <= 17) {
+                if (usia == 12) {
+                    if (bmip < 14.4) {
+                        // Kurang ideal untuk usia 12
+                        Txt2.setOpaque(true);
+                        Txt2.setBackground(Color.blue);
+                        jLabel7.setForeground(Color.blue);
+                        jLabel7.setText("Tidak Ideal");
+                    } else if (bmip >= 14.4 && bmip <= 20.8) {
+                        // Ideal untuk usia 12
+                        Txt2.setOpaque(true);
+                        Txt2.setBackground(Color.green);
+                        jLabel7.setForeground(Color.green);
+                        jLabel7.setText("Ideal");
+                    } else if (bmip > 20.8) {
+                        // Obesitas untuk usia 12
+                        Txt2.setOpaque(true);
+                        Txt2.setBackground(Color.red);
+                        jLabel7.setForeground(Color.red);
+                        jLabel7.setText("obesitas");
+                    }
+                } 
+                else if (usia >= 13 && usia <= 17) {
+                    if (usia == 13) {
+                        if (bmip < 14.9) {
+                        // Kurang ideal untuk usia 14
+                            Txt2.setOpaque(true);
+                            Txt2.setBackground(Color.blue);
+                            jLabel7.setForeground(Color.blue);
+                            jLabel7.setText("Tidak Ideal");
+                        } else if (bmip >= 14.9 && bmip <= 22.7) {
+                            // Ideal untuk usia 13
+                            Txt2.setOpaque(true);
+                            Txt2.setBackground(Color.green);
+                            jLabel7.setForeground(Color.green);
+                            jLabel7.setText("Ideal");
+                        } else if (bmip > 22.7) {
+                            // Obesitas untuk usia 13
+                            Txt2.setOpaque(true);
+                            Txt2.setBackground(Color.red);
+                            jLabel7.setForeground(Color.red);
+                            jLabel7.setText("obesitas");
+                        }
+                    } else if (usia >= 14 && usia <= 17) {
+                        if (usia == 14) {
+                            if (bmip < 15.4) {
+                                // Kurang ideal untuk usia 14
+                                Txt2.setOpaque(true);
+                                Txt2.setBackground(Color.blue);
+                                jLabel7.setForeground(Color.blue);
+                                jLabel7.setText("Tidak Ideal");
+                            // Lakukan tindakan sesuai kebutuhan
+                            } else if (bmip >= 15.4 && bmip <= 22.7) {
+                                // Ideal untuk usia 14
+                                Txt2.setOpaque(true);
+                                Txt2.setBackground(Color.green);
+                                jLabel7.setForeground(Color.green);
+                                jLabel7.setText("Ideal");
+                            } else if (bmip > 22.7) {
+                                // Obesitas untuk usia 14
+                                Txt2.setOpaque(true);
+                                Txt2.setBackground(Color.red);
+                                jLabel7.setForeground(Color.red);
+                                jLabel7.setText("obesitas");
+                            }
+                        } else if (usia >= 15 && usia <= 17) {
+                            if (usia == 15) {
+                                if (bmip < 15.9) {
+                                    // Kurang ideal untuk usia 15
+                                    Txt2.setOpaque(true);
+                                    Txt2.setBackground(Color.blue);
+                                    jLabel7.setForeground(Color.blue);
+                                    jLabel7.setText("Tidak Ideal");
+                                } 
+                                else if (bmip >= 15.9 && bmip <= 23.5) {
+                                    // Ideal untuk usia 15
+                                    Txt2.setOpaque(true);
+                                    Txt2.setBackground(Color.green);
+                                    jLabel7.setForeground(Color.green);
+                                        jLabel7.setText("Ideal");
+                                } else if (bmip > 23.5) {
+                                    // Obesitas untuk usia 15
+                                    Txt2.setOpaque(true);
+                                    Txt2.setBackground(Color.red);
+                                    jLabel7.setForeground(Color.red);
+                                    jLabel7.setText("obesitas");
+                                }
+                            } else if (usia >= 16 && usia <= 17) {
+                                if (usia == 16) {
+                                    if (bmip < 16.2) {
+                                        // Kurang ideal untuk usia 16
+                                        Txt2.setOpaque(true);
+                                        Txt2.setBackground(Color.blue);
+                                        jLabel7.setForeground(Color.blue);
+                                        jLabel7.setText("Tidak Ideal");
+                                    } else if (bmip >= 16.2 && bmip <= 24.1) {
+                                        // Ideal untuk usia 16
+                                        Txt2.setOpaque(true);
+                                        Txt2.setBackground(Color.green);
+                                        jLabel7.setForeground(Color.green);
+                                        jLabel7.setText("Ideal");
+                                    } else if (bmip > 24.1) {
+                                        // Obesitas untuk usia 16
+                                        Txt2.setOpaque(true);
+                                        Txt2.setBackground(Color.red);
+                                        jLabel7.setForeground(Color.red);
+                                        jLabel7.setText("obesitas");
+                                    }
+                                }else if (usia == 17) {
+                                    if (bmip < 16.4) {
+                                        // Kurang ideal untuk usia 17
+                                        Txt2.setOpaque(true);
+                                        Txt2.setBackground(Color.blue);
+                                        jLabel7.setForeground(Color.blue);
+                                        jLabel7.setText("Tidak Ideal");
+                                    }
+                                    else if (bmip >= 16.4 && bmip <= 26.5) {
+                                        // Ideal untuk usia 17
+                                        Txt2.setOpaque(true);
+                                        Txt2.setBackground(Color.green);
+                                        jLabel7.setForeground(Color.green);
+                                        jLabel7.setText("Ideal");
+                                    } else if (bmip > 26.5) {
+                                        // Obesitas untuk usia 17
+                                        Txt2.setOpaque(true);
+                                        Txt2.setBackground(Color.red);
+                                        jLabel7.setForeground(Color.red);
+                                        jLabel7.setText("obesitas");
+                                    }
+                                }
+                            }
                         }
                     }
                 }
             }
+        } else {
+            // Usia diluar rentang 11-17
+            if (bmip <= 18.5) {
+                    Txt2.setOpaque(true);
+                    Txt2.setBackground(Color.blue);
+                    jLabel7.setForeground(Color.blue);
+                    jLabel7.setText("Tidak Ideal");
+                } else if (bmip <= 25) {
+                    Txt2.setOpaque(true);
+                    Txt2.setBackground(Color.green);
+                    jLabel7.setForeground(Color.green);
+                    jLabel7.setText("Ideal");
+                } else if (bmip <= 30) {
+                    Txt2.setOpaque(true);
+                    Txt2.setBackground(Color.orange);
+                    jLabel7.setForeground(Color.orange);
+                    jLabel7.setText("Gemuk");
+                }else{
+                    Txt2.setOpaque(true);
+                    Txt2.setBackground(Color.red);
+                    jLabel7.setForeground(Color.red);
+                    jLabel7.setText("obesitas");
+                }
+            // Lakukan tindakan sesuai kebutuhan
         }
     }
-} else {
-    // Usia diluar rentang 11-17
-    if (bmi <= 18.5) {
-            Txt2.setOpaque(true);
-              Txt2.setBackground(Color.blue);
-            jLabel7.setForeground(Color.blue);
-            jLabel7.setText("Tidak Ideal");
-        } else if (bmi <= 25) {
-            Txt2.setOpaque(true);
-            Txt2.setBackground(Color.green);
-            jLabel7.setForeground(Color.green);
-            jLabel7.setText("Ideal");
-        } else if (bmi <= 30) {
-            Txt2.setOpaque(true);
-            Txt2.setBackground(Color.orange);
-            jLabel7.setForeground(Color.orange);
-            jLabel7.setText("Gemuk");
-        }else{
-             Txt2.setOpaque(true);
-            Txt2.setBackground(Color.red);
-            jLabel7.setForeground(Color.red);
-            jLabel7.setText("obesitas");
+    else {
+        String cal = String.format("%.2f",bmi);
+    
+        Txt2.setText(cal);
+        
+        
+        if (usia >= 11 && usia <= 17) {
+            if (usia == 11) {
+                if (bmi < 13.9) {
+                    // Kurang ideal untuk usia 11
+                    Txt2.setOpaque(true);
+                    Txt2.setBackground(Color.blue);
+                    jLabel7.setForeground(Color.blue);
+                    jLabel7.setText("Tidak Ideal");
+                    // Lakukan tindakan sesuai kebutuhan
+                } else if (bmi >= 13.9 && bmi <= 19.9) {
+                    // Ideal untuk usia 11
+                    Txt2.setOpaque(true);
+                    Txt2.setBackground(Color.green);
+                    jLabel7.setForeground(Color.green);
+                    jLabel7.setText("Ideal");
+                } else if (bmi > 19.9) {
+                    // Obesitas untuk usia 11
+                    Txt2.setOpaque(true);
+                    Txt2.setBackground(Color.red);
+                    jLabel7.setForeground(Color.red);
+                    jLabel7.setText("obesitas");
+                }
+            } 
+            else if (usia >= 12 && usia <= 17) {
+                if (usia == 12) {
+                    if (bmi < 14.4) {
+                        // Kurang ideal untuk usia 12
+                        Txt2.setOpaque(true);
+                        Txt2.setBackground(Color.blue);
+                        jLabel7.setForeground(Color.blue);
+                        jLabel7.setText("Tidak Ideal");
+                    } else if (bmi >= 14.4 && bmi <= 20.8) {
+                        // Ideal untuk usia 12
+                        Txt2.setOpaque(true);
+                        Txt2.setBackground(Color.green);
+                        jLabel7.setForeground(Color.green);
+                        jLabel7.setText("Ideal");
+                    } else if (bmi > 20.8) {
+                        // Obesitas untuk usia 12
+                        Txt2.setOpaque(true);
+                        Txt2.setBackground(Color.red);
+                        jLabel7.setForeground(Color.red);
+                        jLabel7.setText("obesitas");
+                    }
+                } 
+                else if (usia >= 13 && usia <= 17) {
+                    if (usia == 13) {
+                        if (bmi < 14.9) {
+                        // Kurang ideal untuk usia 14
+                            Txt2.setOpaque(true);
+                            Txt2.setBackground(Color.blue);
+                            jLabel7.setForeground(Color.blue);
+                            jLabel7.setText("Tidak Ideal");
+                        } else if (bmi >= 14.9 && bmi <= 22.7) {
+                            // Ideal untuk usia 13
+                            Txt2.setOpaque(true);
+                            Txt2.setBackground(Color.green);
+                            jLabel7.setForeground(Color.green);
+                            jLabel7.setText("Ideal");
+                        } else if (bmi > 22.7) {
+                            // Obesitas untuk usia 13
+                            Txt2.setOpaque(true);
+                            Txt2.setBackground(Color.red);
+                            jLabel7.setForeground(Color.red);
+                            jLabel7.setText("obesitas");
+                        }
+                    } else if (usia >= 14 && usia <= 17) {
+                        if (usia == 14) {
+                            if (bmi < 15.4) {
+                                // Kurang ideal untuk usia 14
+                                Txt2.setOpaque(true);
+                                Txt2.setBackground(Color.blue);
+                                jLabel7.setForeground(Color.blue);
+                                jLabel7.setText("Tidak Ideal");
+                            // Lakukan tindakan sesuai kebutuhan
+                            } else if (bmi >= 15.4 && bmi <= 22.7) {
+                                // Ideal untuk usia 14
+                                Txt2.setOpaque(true);
+                                Txt2.setBackground(Color.green);
+                                jLabel7.setForeground(Color.green);
+                                jLabel7.setText("Ideal");
+                            } else if (bmi > 22.7) {
+                                // Obesitas untuk usia 14
+                                Txt2.setOpaque(true);
+                                Txt2.setBackground(Color.red);
+                                jLabel7.setForeground(Color.red);
+                                jLabel7.setText("obesitas");
+                            }
+                        } else if (usia >= 15 && usia <= 17) {
+                            if (usia == 15) {
+                                if (bmi < 15.9) {
+                                    // Kurang ideal untuk usia 15
+                                    Txt2.setOpaque(true);
+                                    Txt2.setBackground(Color.blue);
+                                    jLabel7.setForeground(Color.blue);
+                                    jLabel7.setText("Tidak Ideal");
+                                } 
+                                else if ((bmi) >= 15.9 && bmi <= 23.5) {
+                                    // Ideal untuk usia 15
+                                    Txt2.setOpaque(true);
+                                    Txt2.setBackground(Color.green);
+                                    jLabel7.setForeground(Color.green);
+                                        jLabel7.setText("Ideal");
+                                } else if (bmi > 23.5) {
+                                    // Obesitas untuk usia 15
+                                    Txt2.setOpaque(true);
+                                    Txt2.setBackground(Color.red);
+                                    jLabel7.setForeground(Color.red);
+                                    jLabel7.setText("obesitas");
+                                }
+                            } else if (usia >= 16 && usia <= 17) {
+                                if (usia == 16) {
+                                    if (bmi < 16.2) {
+                                        // Kurang ideal untuk usia 16
+                                        Txt2.setOpaque(true);
+                                        Txt2.setBackground(Color.blue);
+                                        jLabel7.setForeground(Color.blue);
+                                        jLabel7.setText("Tidak Ideal");
+                                    } else if (bmi >= 16.2 && bmi <= 24.1) {
+                                        // Ideal untuk usia 16
+                                        Txt2.setOpaque(true);
+                                        Txt2.setBackground(Color.green);
+                                        jLabel7.setForeground(Color.green);
+                                        jLabel7.setText("Ideal");
+                                    } else if (bmi > 24.1) {
+                                        // Obesitas untuk usia 16
+                                        Txt2.setOpaque(true);
+                                        Txt2.setBackground(Color.red);
+                                        jLabel7.setForeground(Color.red);
+                                        jLabel7.setText("obesitas");
+                                    }
+                                }else if (usia == 17) {
+                                    if (bmi < 16.4) {
+                                        // Kurang ideal untuk usia 17
+                                        Txt2.setOpaque(true);
+                                        Txt2.setBackground(Color.blue);
+                                        jLabel7.setForeground(Color.blue);
+                                        jLabel7.setText("Tidak Ideal");
+                                    }
+                                    else if (bmi >= 16.4 && bmi <= 26.5) {
+                                        // Ideal untuk usia 17
+                                        Txt2.setOpaque(true);
+                                        Txt2.setBackground(Color.green);
+                                        jLabel7.setForeground(Color.green);
+                                        jLabel7.setText("Ideal");
+                                    } else if (bmi > 26.5) {
+                                        // Obesitas untuk usia 17
+                                        Txt2.setOpaque(true);
+                                        Txt2.setBackground(Color.red);
+                                        jLabel7.setForeground(Color.red);
+                                        jLabel7.setText("obesitas");
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }else {
+            // Usia diluar rentang 11-17
+            if (bmi <= 18.5) {
+                    Txt2.setOpaque(true);
+                    Txt2.setBackground(Color.blue);
+                    jLabel7.setForeground(Color.blue);
+                    jLabel7.setText("Tidak Ideal");
+                } else if (bmi <= 25) {
+                    Txt2.setOpaque(true);
+                    Txt2.setBackground(Color.green);
+                    jLabel7.setForeground(Color.green);
+                    jLabel7.setText("Ideal");
+                } else if (bmi <= 30) {
+                    Txt2.setOpaque(true);
+                    Txt2.setBackground(Color.orange);
+                    jLabel7.setForeground(Color.orange);
+                    jLabel7.setText("Gemuk");
+                }else{
+                    Txt2.setOpaque(true);
+                    Txt2.setBackground(Color.red);
+                    jLabel7.setForeground(Color.red);
+                    jLabel7.setText("obesitas");
+                }
+            // Lakukan tindakan sesuai kebutuhan
         }
-    // Lakukan tindakan sesuai kebutuhan
-}
+    }
+    
+
+ 
+ 
       
             
     }//GEN-LAST:event_Btn1ActionPerformed
